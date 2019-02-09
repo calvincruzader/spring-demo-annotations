@@ -1,14 +1,18 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component 
 public class TennisCoach implements Coach {
 	
 	@Autowired
-	@Qualifier("happyFortuneService") // default, same name as the class, first letter lowercased
+	@Qualifier("fileFortuneService") // default, same name as the class, first letter lowercased
 	FortuneService fortuneService;
 	
 	// the same under the hood as spring-demo-one, but this time we use autowired for 
@@ -17,6 +21,9 @@ public class TennisCoach implements Coach {
 //	public TennisCoach(FortuneService theFortuneService) { 
 //		this.fortuneService = theFortuneService;
 //	}
+	public TennisCoach() {
+		System.out.println("Inside default no-arg constructor for TennisCoach");
+	}
 //	
 //	@Autowired
 //	public void nameDoesntMatter(FortuneService theFortuneService) { 
@@ -30,6 +37,13 @@ public class TennisCoach implements Coach {
 	 * Lol, looks like you can pass a @Component instance to any method defined by @Autowired.
 	 * DUPED!
 	 * */
+	
+	// define init and destroy methods 
+	
+	@PreDestroy
+	public void cleanupStuff() { 
+		System.out.println("do my cleanupStuff()");
+	}
 	
 	@Override
 	public String getDailyWorkout() { 

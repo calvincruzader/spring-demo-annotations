@@ -41,3 +41,25 @@ Spring @Autowired @Component scanning default quirks:
 		
 @Value annotation grabs from a *.properties file, fed in through a *Context.xml, which is called in by new ClassPathXmlApplicationContext(*Context.xml) and 
 thus an instance is created 
+
+------
+
+{+}Bean scopes with annotations
+Default bean scope is singleton: 
+Coach coach1 = context.getBean("tennisCoach", Coach.class)
+Coach coach2 = context.getBean("tennisCoach", Coach.class) 
+coach1 and coach2 both reference the same bean instance!
+
+------
+
+Change @Scope to change (the scope of) how the objects get created in memory 
+
+@PostConstruct - custom initialization work per object
+@PreDestroy - custom cleanup code per object 
+	- DOES NOT WORK on @Scope("prototype") beans! 
+	
+------
+No xml needed! 
+
+@Configuration
+@ComponentScan("com.luv2code.springdemo") // scans entire package for things

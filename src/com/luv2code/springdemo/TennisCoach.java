@@ -11,14 +11,14 @@ public class TennisCoach implements Coach {
 	
 	// the same under the hood as spring-demo-one, but this time we use autowired for 
 	// dependency injection, constructor injection via autowired
+//	@Autowired
+//	public TennisCoach(FortuneService theFortuneService) { 
+//		this.fortuneService = theFortuneService;
+//	}
+//	
 	@Autowired
-	public TennisCoach(FortuneService theFortuneService) { 
-		this.fortuneService = theFortuneService;
-	}
-	
-	@Autowired
-	public void doRandomGayShitFunLove(FortuneService theFortuneService) { 
-		System.out.println("Inside doRandomGayShitFunLove() due to Spring's @autowired setter dependency injection");
+	public void nameDoesntMatter(FortuneService theFortuneService) { 
+		System.out.println("Inside nameDoesntMatter() due to Spring's @autowired setter dependency injection");
 		fortuneService = theFortuneService;
 	}
 	/*

@@ -1,0 +1,21 @@
+annotations notes
+- When autowiring, doesn't have to be an interface, you can use classes as well just fine.
+- Right when you initialize an ClassPathXmlApplicationContext variable, Spring will do its component scanning and store 
+(what exactly? a collection of beans? and store them )
+
+general notes learned today: 
+what does it mean to serialize an object? to serialize the object means to convert it into a byte stream
+
+What 3 properties comprise a JavaBean:
+- all properites are private 
+- a public no-arg constructor is provided
+- implements serializable    <- (its objects can be put into bytestreams!)
+
+What does it mean for a class in Java to implement Serializable? 
+- it means objects of that class are serializable/can be serialized/ can be written into streams, thus to files, object databases, and ANYTHING really
+
+What does it mean to be a JavaBean vs another class? 
+- a class defines a JavaBean if it follows the standards
+
+
+

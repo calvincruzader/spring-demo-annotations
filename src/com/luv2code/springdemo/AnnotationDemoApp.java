@@ -17,6 +17,10 @@ public class AnnotationDemoApp {
 
 		System.out.println(theCoach.getDailyFortune());
 		
+		SwimCoach coach2 = (SwimCoach) context.getBean("swimCoach");
+		System.out.println(coach2.getEmail());
+		System.out.println(coach2.getTeam());
+		
 		// close context 
 		context.close();
 		

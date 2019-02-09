@@ -17,6 +17,8 @@ What does it mean for a class in Java to implement Serializable?
 What does it mean to be a JavaBean vs another class? 
 - a class defines a JavaBean if it follows the standards
 
+Bean must be
+
 for @Autowired, it doesn't have to be a setter method, you can set it as anything and Spring will use this for dependency injection 
 
 for @Autowired, you can set it on a property to automatically create getters/setters for it
@@ -36,3 +38,6 @@ Spring @Autowired @Component scanning default quirks:
 		- for example: HappyFortuneService class should have @Qualifier("happyFortuneService") annotation
 	- else, if BOTH the first and second letters are capitalized, then Spring will require a default @Qualifier annotation with no letters lowercased
 		- for example: RESTFortuneService class should have @Qualifier("RESTFortuneService") annotation
+		
+@Value annotation grabs from a *.properties file, fed in through a *Context.xml, which is called in by new ClassPathXmlApplicationContext(*Context.xml) and 
+thus an instance is created 

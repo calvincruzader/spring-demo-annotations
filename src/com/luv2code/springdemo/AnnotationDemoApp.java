@@ -9,13 +9,13 @@ public class AnnotationDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// get bean from Spring container
-//		Coach theCoach = context.getBean("tennisCoach", Coach.class);
+		Coach theCoach = context.getBean("tennisCoach", Coach.class);
 		// default bean ID is className (first letter lowercased) i hate that
 		
 		// call method on the bean 
-//		System.out.println(theCoach.getDailyWorkout());
-//		
-//		System.out.println(theCoach.getDailyFortune());
+		System.out.println(theCoach.getDailyWorkout());
+
+		System.out.println(theCoach.getDailyFortune());
 		
 		// close context 
 		context.close();

@@ -10,7 +10,7 @@ public class AnnotationDemoApp {
 		
 		// get bean from Spring container
 		Coach theCoach = context.getBean("tennisCoach", Coach.class);
-		// deafult bean ID is className (first letter lowercased)
+		// deafult bean ID is className (first letter lowercased) i hate that
 		
 		// call method on the bean 
 		System.out.println(theCoach.getDailyWorkout());

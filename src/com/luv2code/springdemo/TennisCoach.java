@@ -11,16 +11,16 @@ public class TennisCoach implements Coach {
 	
 	// the same under the hood as spring-demo-one, but this time we use autowired for 
 	// dependency injection, constructor injection via autowired
-//	@Autowired
-//	public TennisCoach(FortuneService theFortuneService) { 
-//		this.fortuneService = theFortuneService;
-//	}
+	@Autowired
+	public TennisCoach(FortuneService theFortuneService) { 
+		this.fortuneService = theFortuneService;
+	}
 	
-//	@Autowired
-//	public void doRandomGayShitFunLove(FortuneService theFortuneService) { 
-//		System.out.println("Inside doRandomGayShitFunLove() due to Spring's @autowired setter dependency injection");
-//		fortuneService = theFortuneService;
-//	}
+	@Autowired
+	public void doRandomGayShitFunLove(FortuneService theFortuneService) { 
+		System.out.println("Inside doRandomGayShitFunLove() due to Spring's @autowired setter dependency injection");
+		fortuneService = theFortuneService;
+	}
 	/*
 	 * @autowired constructor and setter dependency injection are essentially the same thing.
 	 * Just grab a class defined to be a @Component, create an instance, and pass him along
